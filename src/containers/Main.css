@@ -1,0 +1,13 @@
+* {
+  font-family: Verdana, sans-serif; 
+}
+
+.Main{
+  display: grid;
+  grid-template-areas: "history app";
+  background-color: rbg(238, 238,238);
+}
+
+.App{
+  grid-area: 'app';
+}

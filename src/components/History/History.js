@@ -4,7 +4,7 @@ export default class History extends Component {
 
   render() {
     return (
-      <aside>
+      <aside >
         <h2>History</h2>
         <ul id='history'>
 
