@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryItem component renders HistoryItem 1`] = `
+<div
+  className="HistoryItem"
+  onClick={[Function]}
+>
+  <h2>
+    HJK
+  </h2>
+  <p>
+    ghj
+  </p>
+</div>
+`;
