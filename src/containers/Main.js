@@ -3,43 +3,20 @@ import History from '../components/History/History';
 import Form from '../components/Form/Form';
 import Response from '../components/Response/Response';
 import styles from './Main.css';
-// import { callApi } from '../services/callApi';
-import { FormProvider } from '../contexts/FormContext';
+import { useFormState } from '../contexts/FormContext';
 
 const Main = () => {
-  const initialState = {
-    url: '',
-    method: 'get',
-    body: '',
-    headers: { 'Content-Type': 'application/json' },
-    results: { headers: {}, response: {} }
-  };
-
-  const reducer = (state, action) => {
-    switch(action.type) {
-      case 'url':
-        return { ...state, url: action.payload };
-      case 'method':
-        return { ...state, method: action.payload };
-      case 'body':
-        return { ...state, body: action.payload };
-      case 'headers':
-        return { ...state, headers: action.payload };
-      case 'results':
-        return { ...state, results: action.payload };
-      default:
-        return state;
-    }
-  };
+  const state = useFormState();
 
   return (
     <main className={styles.Main}>
-      <History />
+      <History historyArr={state.history}/>
       <section className={styles.App}>
-        <FormProvider reducer={reducer} initialState={initialState}>
-          <Form />
-          <Response />
-        </FormProvider>
+        <Form />
+        <Response
+          headers={state.headers}
+          results={state.response}
+        />
       </section>
     </main>
   );
