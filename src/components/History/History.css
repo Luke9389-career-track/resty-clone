@@ -1,0 +1,6 @@
+.History{
+  grid-area: 'history';
+  margin: 0.5em;
+  padding: 1em;
+  border: 2px lightgray solid;
+}
